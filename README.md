@@ -1,7 +1,7 @@
-# LRMI
-Code for the paper ''Boosting Document-Level Relation Extraction with Logical Rules' Mining and Injection", which is under EMNLP 2022 review.
+# MILR
+Code for the paper '[Boosting Document-Level Relation Extraction by Mining and Injecting Logical Rules](https://aclanthology.org/2022.emnlp-main.704.pdf)", which is accepted to EMNLP 2022 main conference.
 
-For simplicity, we only supply the code with the strong backbone [ATLOP](https://arxiv.org/abs/2010.11304) being the backbone tested on the [DWIE](https://arxiv.org/abs/2009.12626) dataset. LRMI with other backbones and datasets are similar. This code is adapted from the repository of [ATLOP](https://github.com/wzhouad/ATLOP). Thanks for their excellent work. 
+For simplicity, we only supply the code with the strong backbone [ATLOP](https://arxiv.org/abs/2010.11304) being the backbone tested on the [DWIE](https://arxiv.org/abs/2009.12626) dataset. MILR with other backbones and datasets are similar. This code is adapted from the repository of [ATLOP](https://github.com/wzhouad/ATLOP). Thanks for their excellent work. 
 
 In addition, predictions used for analysis in our paper are provided. We also provide mined rules whose confidence is higher than the threshold `minC`.
 
@@ -40,13 +40,13 @@ In addition, predictions used for analysis in our paper are provided. We also pr
   We also exported `enviroment.yaml` and `requirements.txt`.
 
 ## Dataset
-The training and development set of [DocRED](https://www.aclweb.org/anthology/P19-1074/) dataset can be downloaded at [link](https://github.com/thunlp/DocRED/tree/master/data). And the test set used in LRMI can be downloaded at [link](https://github.com/tonytan48/Re-DocRED).  The DWIE dataset can be obtained following the instructions in [LogiRE](https://github.com/rudongyu/LogiRE). We also upload the processed dataset in EMNLP 2022 START Conference Manager.
+The training and development set of [DocRED](https://www.aclweb.org/anthology/P19-1074/) dataset can be downloaded at [link](https://github.com/thunlp/DocRED/tree/master/data). And the test set used in MILR can be downloaded at [link](https://github.com/tonytan48/Re-DocRED).  The DWIE dataset can be obtained following the instructions in [LogiRE](https://github.com/rudongyu/LogiRE). We also upload the processed dataset in EMNLP 2022 START Conference Manager.
 
 The expected structure of files is:
 
 ```
 ​```
-ATLOP+LRMI
+ATLOP+MILR
  |-- dataset_dwie
  |    |-- train_annotated.json        
  |    |-- dev.json
@@ -78,7 +78,7 @@ Download `BERT-base-uncased` at [link](https://huggingface.co/bert-base-uncased/
 
 ```
 ​```
-ATLOP+LRMI
+ATLOP+MILR
  |-- PLM
  |    |-- bert-base-uncased
  |    |    |-- config.json        
@@ -93,7 +93,7 @@ We supply mined rules on DWIE and DocRED in `./mined_rules`. The structure of fi
 
 ```
 ​```
-ATLOP+LRMI
+ATLOP+MILR
  |-- mined_rules:
  |    |-- rule_docred.txt
  |    |-- rule_dwie.txt
@@ -106,51 +106,51 @@ Examples are as follows:
 
 ## Predictions Produced by Trained Models
 
-We supply predictions produced by `ATLOP`, `ATLOP+LogiRE`, and `ATLOP+LRMI`. The structure of files is :
+We supply predictions produced by `ATLOP`, `ATLOP+LogiRE`, and `ATLOP+MILR`. The structure of files is :
 
 ```
 ​```
-ATLOP+LRMI
+ATLOP+MILR
  |-- results_for_dwie
  |    |-- result_ATLOP_dev.json
  |    |-- result_ATLOP_test.json
  |    |-- result_LogiRE_test.json
- |    |-- result_LRMI_dev.json
- |    |-- result_LRMI_test.json
+ |    |-- result_MILR_dev.json
+ |    |-- result_MILR_test.json
  |-- results_for_docred
  |    |-- result_ATLOP_test.json
- |    |-- result_LRMI_test.json
+ |    |-- result_MILR_test.json
 
 ```
 
 ## Trained Models
 
-We supply trained `ATLOP` & `ATLOP+LRMI` on the DWIE dataset in [link](https://drive.google.com/file/d/13u_BXjvpNl_3YpDtAQac_dWvfhpAw6Gp/view?usp=sharing) and [link](https://drive.google.com/file/d/1R7LE2rR_LHBoCEas62eZ3yriLtYa27MH/view?usp=sharing), respectively. Please download trained models and put them into the path `./trained_model/`. The expected structure of files is:
+We supply trained `ATLOP` & `ATLOP+MILR` on the DWIE dataset in [link](https://drive.google.com/file/d/13u_BXjvpNl_3YpDtAQac_dWvfhpAw6Gp/view?usp=sharing) and [link](https://drive.google.com/file/d/1R7LE2rR_LHBoCEas62eZ3yriLtYa27MH/view?usp=sharing), respectively. Please download trained models and put them into the path `./trained_model/`. The expected structure of files is:
 
 ```
 ​```
-ATLOP+LRMI
+ATLOP+MILR
  |-- trained_model
  |    |-- model_ATLOP_DWIE.pth
- |    |-- model_LRMI_DWIE.pth
+ |    |-- model_MILR_DWIE.pth
 
 ```
 
 ## Log Samples
 
- We also provide log samples in  `./logs/`. These samples involve the training and inference of `ATLOP+LRMI` and the inference of `ATLOP`. 
+ We also provide log samples in  `./logs/`. These samples involve the training and inference of `ATLOP+MILR` and the inference of `ATLOP`. 
 
-## Training and Evaluation of  ATLOP+LRMI
+## Training and Evaluation of  ATLOP+MILR
 
 ```bash
->> sh scripts/LRMI_train_DWIE.sh  # for training; if trained model has been downloaded, this process can be omitted
+>> sh scripts/MILR_train_DWIE.sh  # for training; if trained model has been downloaded, this process can be omitted
 ```
 
 The classification loss, consistency regularization loss, total loss, and evaluation results on the dev set are synced to the wandb dashboard.
 ```bash
->> sh scripts/LRMI_evaluate_DWIE.sh  # for inference
+>> sh scripts/MILR_evaluate_DWIE.sh  # for inference
 ```
-The program will generate a test file `./results_for_dwie/result_LRMI.json` in the official evaluation format.  In addition, the log involving evaluation results would be dumped to `./logs/LRMI_DWIE_evaluation.out`.
+The program will generate a test file `./results_for_dwie/result_MILR.json` in the official evaluation format.  In addition, the log involving evaluation results would be dumped to `./logs/MILR_DWIE_evaluation.out`.
 
 Attention: There may be a bug when wandb is synchronized in the cloud. If this happens, try `wandb offline` in terminal. More instructions can be found in [link](https://docs.wandb.ai/ref/cli/wandb-offline) .
 
