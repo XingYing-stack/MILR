@@ -1,0 +1,90 @@
+['head_of_state'] -> citizen_of : 0.9807692307692307
+['agent_of', 'in0'] -> citizen_of : 1.0
+['citizen_of-x', 'gpe0'] -> citizen_of : 1.0
+['head_of_gov', 'in0'] -> citizen_of : 1.0
+['minister_of-x', 'gpe0'] -> citizen_of : 0.98
+['head_of_gov-x', 'gpe0'] -> citizen_of : 1.0
+['head_of_state-x', 'gpe0'] -> citizen_of : 1.0
+['parent_of', 'citizen_of'] -> citizen_of : 1.0
+['anti_child_of', 'citizen_of'] -> citizen_of : 1.0
+['in0-x', 'gpe0'] -> in0 : 1.0
+['in2', 'in0'] -> in0 : 1.0
+['in1', 'in0'] -> in0 : 1.0
+['anti_based_in2', 'based_in0'] -> in0 : 1.0
+['anti_in2', 'in0'] -> in0 : 1.0
+['anti_in1', 'in0'] -> in0 : 1.0
+['anti_event_in2', 'event_in0'] -> in0 : 1.0
+['anti_in0-x', 'in0'] -> gpe0 : 1.0
+['anti_in0-x', 'based_in0'] -> gpe0 : 1.0
+['anti_in0-x', 'agency_of'] -> gpe0 : 1.0
+['anti_citizen_of-x', 'citizen_of'] -> gpe0 : 0.9888220120378332
+['anti_citizen_of-x', 'head_of_state'] -> gpe0 : 0.9956521739130435
+['anti_citizen_of-x', 'royalty_of'] -> gpe0 : 1.0
+['anti_based_in0-x', 'in0'] -> gpe0 : 1.0
+['anti_based_in0-x', 'based_in0'] -> gpe0 : 0.9920494699646644
+['anti_minister_of-x', 'citizen_of'] -> gpe0 : 0.9865771812080537
+['anti_minister_of-x', 'agent_of'] -> gpe0 : 1.0
+['anti_minister_of-x', 'minister_of'] -> gpe0 : 1.0
+['anti_head_of_gov-x', 'citizen_of'] -> gpe0 : 0.9864864864864865
+['anti_head_of_gov-x', 'agent_of'] -> gpe0 : 1.0
+['anti_head_of_gov-x', 'head_of_gov'] -> gpe0 : 0.9931972789115646
+['anti_agent_of-x', 'agent_of'] -> gpe0 : 0.9887640449438202
+['anti_head_of_state-x', 'citizen_of'] -> gpe0 : 0.9828326180257511
+['anti_head_of_state-x', 'agent_of'] -> gpe0 : 1.0
+['anti_head_of_state-x', 'head_of_state'] -> gpe0 : 1.0
+['anti_agency_of-x', 'in0'] -> gpe0 : 1.0
+['anti_agency_of-x', 'based_in0'] -> gpe0 : 0.9927272727272727
+['anti_agency_of-x', 'agency_of'] -> gpe0 : 0.9927272727272727
+['anti_agency_of-x', 'ministry_of'] -> gpe0 : 0.9811320754716981
+['head_of'] -> member_of : 1.0
+['player_of'] -> member_of : 1.0
+['spokesperson_of'] -> member_of : 1.0
+['coach_of'] -> member_of : 1.0
+['minister_of'] -> agent_of : 0.9879518072289156
+['head_of_state'] -> agent_of : 0.9884615384615385
+['minister_of-x', 'gpe0'] -> agent_of : 0.9866666666666667
+['agent_of-x', 'gpe0'] -> agent_of : 1.0
+['head_of_state-x', 'gpe0'] -> agent_of : 0.982532751091703
+['minister_of-x'] -> citizen_of-x : 0.9815950920245399
+['head_of_gov-x'] -> citizen_of-x : 0.9885057471264368
+['head_of_state-x'] -> citizen_of-x : 0.9961089494163424
+['citizen_of', 'anti_gpe0'] -> citizen_of-x : 1.0
+['agent_of', 'in0-x'] -> citizen_of-x : 1.0
+['head_of_gov', 'in0-x'] -> citizen_of-x : 1.0
+['head_of_gov', 'anti_gpe0'] -> citizen_of-x : 1.0
+['minister_of', 'anti_gpe0'] -> citizen_of-x : 0.98
+['head_of_state', 'anti_gpe0'] -> citizen_of-x : 1.0
+['parent_of', 'citizen_of-x'] -> citizen_of-x : 1.0
+['anti_child_of', 'citizen_of-x'] -> citizen_of-x : 1.0
+['mayor_of'] -> head_of_gov : 1.0
+['head_of_gov-x', 'gpe0'] -> head_of_gov : 1.0
+['institution_of'] -> part_of : 1.0
+['agency_of'] -> based_in0 : 0.9873817034700315
+['ministry_of'] -> based_in0 : 0.9830508474576272
+['based_in0-x', 'gpe0'] -> based_in0 : 1.0
+['based_in2', 'in0'] -> based_in0 : 1.0
+['agency_of-x', 'gpe0'] -> based_in0 : 1.0
+['agency_of-x'] -> based_in0-x : 1.0
+['based_in0', 'anti_gpe0'] -> based_in0-x : 1.0
+['based_in2', 'in0-x'] -> based_in0-x : 1.0
+['agency_of', 'anti_gpe0'] -> based_in0-x : 1.0
+['ministry_of', 'anti_gpe0'] -> based_in0-x : 1.0
+['minister_of-x', 'gpe0'] -> minister_of : 1.0
+['minister_of', 'anti_gpe0'] -> minister_of-x : 1.0
+['head_of_gov', 'anti_gpe0'] -> head_of_gov-x : 1.0
+['head_of_state-x', 'gpe0'] -> head_of_state : 1.0
+['head_of_state', 'anti_gpe0'] -> head_of_state-x : 1.0
+['ministry_of'] -> agency_of : 1.0
+['agency_of-x', 'gpe0'] -> agency_of : 1.0
+['agency_of', 'anti_gpe0'] -> agency_of-x : 1.0
+['ministry_of', 'anti_gpe0'] -> agency_of-x : 1.0
+['anti_head_of', 'agent_of-x'] -> agency_of-x : 1.0
+['event_in2', 'in0'] -> event_in0 : 1.0
+['anti_child_of'] -> parent_of : 1.0
+['anti_spouse_of'] -> spouse_of : 1.0
+['anti_parent_of'] -> child_of : 1.0
+['won_vs'] -> vs : 1.0
+['anti_vs'] -> vs : 1.0
+['anti_won_vs'] -> vs : 1.0
+['directed_by'] -> created_by : 1.0
+['anti_played_by', 'character_in'] -> plays_in : 1.0
